@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Marketplace | Real Estate, Services and Household Items</title>
+<meta name="description" content="Find real estate agents, service providers and household items from verified vendors across Nigeria.">
+<meta name="theme-color" content="#990f4b">
+<style>
+:root{--m:#990f4b;--m2:#c21766;--tint:#fdf0f6;--tint2:#fbe0ec;--ink:#2b1220;--mu:#7a5a6a;--ln:#f0d3e1}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font:400 1rem/1.6 -apple-system,"Segoe UI",Roboto,system-ui,sans-serif;color:var(--ink);background:#fff}
+a{color:var(--m);text-decoration:none}
+.wrap{width:min(1100px,100% - 1.6rem);margin:0 auto}
+.top{background:linear-gradient(180deg,#fff,var(--tint));border-bottom:3px solid var(--m);text-align:center;padding:1rem 0 0}
+.logo{display:inline-grid;place-items:center;min-width:150px;max-width:260px;height:68px;border:2px dashed var(--m2);border-radius:14px;color:var(--m);font-weight:700;letter-spacing:.08em;font-size:.8rem;overflow:hidden;padding:0 .8rem}
+.logo img{max-height:64px;max-width:100%;display:block}.logo.has{border:0;padding:0}
+.phones{display:flex;gap:1.2rem;justify-content:center;flex-wrap:wrap;margin:.5rem 0 .7rem;font-weight:600}.phones a{color:var(--ink)}.phones a:before{content:"\260E  ";color:var(--m)}
+nav{display:flex;gap:.3rem;overflow-x:auto;justify-content:center;padding:.4rem .6rem .7rem;scrollbar-width:none;flex-wrap:wrap}
+nav a{padding:.45rem .95rem;border-radius:999px;font-weight:600;font-size:.92rem;color:var(--ink);white-space:nowrap}
+nav a:hover,nav a.on{background:var(--m);color:#fff}
+nav .cta{background:var(--m);color:#fff}
+.badge{display:inline-block;min-width:20px;padding:0 .35rem;margin-left:.3rem;border-radius:999px;background:#fff;color:var(--m);font-size:.75rem;text-align:center}
+main{padding:1.2rem 0 3rem;min-height:60vh}
+h1{font-size:clamp(1.6rem,5vw,2.4rem);line-height:1.15;color:var(--m);margin:.4rem 0 .6rem}h2{font-size:1.3rem;margin:1.4rem 0 .6rem;color:var(--m)}h3{font-size:1.05rem}
+.crumb{font-size:.85rem;color:var(--mu);margin-bottom:.2rem}
+.hero{background:linear-gradient(135deg,var(--m),var(--m2));color:#fff;border-radius:24px;padding:1.6rem 1.3rem;margin-bottom:1.4rem}.hero h1{color:#fff;margin-top:0}.hero p{opacity:.92;max-width:40rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1rem}
+.tcard{background:#fff;border:1px solid var(--ln);border-radius:22px;padding:1.2rem;box-shadow:0 8px 24px rgba(153,15,75,.08);transition:transform .25s,box-shadow .25s;display:block;color:var(--ink)}
+.tcard:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(153,15,75,.18)}
+.tcard h3{color:var(--m);font-size:1.25rem;margin-bottom:.4rem}.chips{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.5rem}.chip{background:var(--tint2);color:var(--m);border-radius:999px;padding:.15rem .65rem;font-size:.8rem;font-weight:600}
+.card{background:#fff;border:1px solid var(--ln);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;color:var(--ink);box-shadow:0 6px 18px rgba(153,15,75,.07);transition:transform .25s}
+.card:hover{transform:translateY(-3px)}.card .im{aspect-ratio:4/3;background:var(--tint2);display:grid;place-items:center;color:var(--m);font-weight:700;overflow:hidden}.card .im img{width:100%;height:100%;object-fit:cover}
+.card .bd{padding:.8rem .9rem 1rem}.price{color:var(--m);font-weight:800;font-size:1.1rem}.sub{color:var(--mu);font-size:.85rem}
+.banner{position:relative;aspect-ratio:16/5;min-height:110px;border-radius:20px;overflow:hidden;background:#000;margin-bottom:1rem}.banner iframe,.banner video{position:absolute;inset:0;width:100%;height:100%;border:0;object-fit:cover;pointer-events:none}
+.banner.ph{background:repeating-linear-gradient(45deg,var(--tint),var(--tint) 14px,var(--tint2) 14px,var(--tint2) 28px);display:grid;place-items:center;text-align:center;color:var(--m);border:2px dashed var(--m2)}.banner.ph span{font-weight:800;font-size:1.2rem}.banner.ph small{display:block}
+.bar{display:flex;gap:.6rem;flex-wrap:wrap;align-items:center;margin:.6rem 0}
+input,select,textarea{font:inherit;color:inherit;background:#fff;border:1.5px solid var(--ln);border-radius:12px;padding:.65rem .8rem;width:100%}input:focus,select:focus,textarea:focus{outline:2px solid var(--m2);border-color:var(--m2)}
+textarea{min-height:100px}label{display:block;font-size:.85rem;font-weight:600;color:var(--mu);margin:.7rem 0 .2rem}
+.btn{display:inline-block;border:0;cursor:pointer;background:var(--m);color:#fff;font:inherit;font-weight:700;padding:.7rem 1.3rem;border-radius:999px;transition:background .2s}.btn:hover{background:var(--m2)}.btn.o{background:#fff;color:var(--m);border:2px solid var(--m)}.btn.s{padding:.4rem .9rem;font-size:.85rem}.btn:disabled{opacity:.5}
+.box{background:#fff;border:1px solid var(--ln);border-radius:18px;padding:1.1rem;margin-bottom:1rem;box-shadow:0 6px 18px rgba(153,15,75,.06)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}@media(max-width:620px){.two{grid-template-columns:1fr}}
+.gal{display:grid;gap:.5rem}.gal .main{aspect-ratio:4/3;border-radius:18px;overflow:hidden;background:var(--tint2)}.gal .main img{width:100%;height:100%;object-fit:cover}.thumbs{display:flex;gap:.4rem;overflow-x:auto}.thumbs img{width:70px;height:56px;object-fit:cover;border-radius:10px;cursor:pointer;border:2px solid transparent}.thumbs img.on{border-color:var(--m)}
+.vid{position:relative;display:block;width:100%;max-width:420px;border-radius:16px;overflow:hidden;cursor:pointer;border:0;padding:0;background:#000}.vid img{width:100%;display:block;opacity:.85}.vid span{position:absolute;inset:0;display:grid;place-items:center;font-size:3rem;color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.6)}
+#ov{position:fixed;inset:0;z-index:90;background:rgba(30,5,18,.86);display:grid;place-items:center;padding:1rem}#ov[hidden]{display:none}#ov .in{position:relative;width:min(900px,100%);aspect-ratio:16/9;background:#000;border-radius:16px;overflow:hidden}#ov iframe{width:100%;height:100%;border:0}#ov .x{position:absolute;top:-2.6rem;right:0;background:#fff;color:var(--m);border:0;border-radius:999px;width:2.2rem;height:2.2rem;font-size:1.3rem;cursor:pointer}
+.tabs{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:1rem}.tabs button{border:1.5px solid var(--m);background:#fff;color:var(--m);border-radius:999px;padding:.45rem 1rem;font:inherit;font-weight:700;cursor:pointer}.tabs button.on{background:var(--m);color:#fff}
+.note{background:var(--tint);border-left:4px solid var(--m);padding:.7rem 1rem;border-radius:10px;font-size:.92rem;margin:.6rem 0}
+.row{border-top:1px solid var(--ln);padding:.8rem 0}.flag{display:inline-block;padding:.1rem .6rem;border-radius:999px;background:var(--tint2);color:var(--m);font-size:.75rem;font-weight:700;margin-right:.3rem}
+.chk{display:flex;gap:.5rem;align-items:center;margin:.4rem 0}.chk input{width:auto}.chk label{margin:0}
+.tbl{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:.88rem}th,td{border-bottom:1px solid var(--ln);padding:.45rem .5rem;text-align:center;white-space:nowrap}th:first-child,td:first-child{text-align:left}th{background:var(--tint);color:var(--m)}
+.unread{border-left:4px solid var(--m)}
+#toast{position:fixed;left:50%;bottom:1.2rem;transform:translateX(-50%);background:var(--m);color:#fff;padding:.7rem 1.2rem;border-radius:999px;z-index:99;opacity:0;pointer-events:none;transition:opacity .3s;max-width:90%;text-align:center}#toast.on{opacity:1}
+footer{border-top:1px solid var(--ln);background:var(--tint);padding:1.2rem 0;font-size:.88rem;color:var(--mu);text-align:center}
+</style>
+</head>
+<body>
+<header class="top"><a href="#/" class="logo" id="logo">YOUR LOGO</a><div class="phones" id="phones"></div><nav id="nav"></nav></header>
+<main><div class="wrap" id="app"><p>Loading...</p></div></main>
+<footer><div class="wrap"><span id="fco">Marketplace</span> &middot; <a href="#/admin">Admin</a></div></footer>
+<div id="ov" hidden></div><div id="toast"></div>
+<script>
+(()=>{
+const API=''; // paste your Google Apps Script /exec URL here
+const $=s=>document.querySelector(s);
+const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const LGA={'Akwa Ibom':['Abak','Eastern Obolo','Eket','Esit Eket','Essien Udim','Etim Ekpo','Etinan','Ibeno','Ibesikpo Asutan','Ibiono Ibom','Ika','Ikono','Ikot Abasi','Ikot Ekpene','Ini','Itu','Mbo','Mkpat Enin','Nsit Atai','Nsit Ibom','Nsit Ubium','Obot Akara','Okobo','Onna','Oron','Oruk Anam','Udung Uko','Ukanafun','Uruan','Urue-Offong/Oruko','Uyo'],
+'Rivers':['Abua/Odual','Ahoada East','Ahoada West','Akuku-Toru','Andoni','Asari-Toru','Bonny','Degema','Eleme','Emohua','Etche','Gokana','Ikwerre','Khana','Obio/Akpor','Ogba/Egbema/Ndoni','Ogu/Bolo','Okrika','Omuma','Opobo/Nkoro','Oyigbo','Port Harcourt','Tai'],
+'Cross River':['Abi','Akamkpa','Akpabuyo','Bakassi','Bekwarra','Biase','Boki','Calabar Municipal','Calabar South','Etung','Ikom','Obanliku','Obubra','Obudu','Odukpani','Ogoja','Yakuurr','Yala'],
+'Lagos':['Agege','Ajeromi-Ifelodun','Alimosho','Amuwo-Odofin','Apapa','Badagry','Epe','Eti-Osa','Ibeju-Lekki','Ifako-Ijaiye','Ikeja','Ikorodu','Kosofe','Lagos Island','Lagos Mainland','Mushin','Ojo','Oshodi-Isolo','Shomolu','Surulere'],
+'FCT (Abuja)':['Abaji','Abuja Municipal Area Council','Bwari','Gwagwalada','Kuje','Kwali']};
+let S={cfg:{},tiers:[],pages:[],states:[]},TOK=localStorage.getItem('mk_t')||'',ATOK=sessionStorage.getItem('mk_a')||'',ME=null,UNREAD=0,ADM=null;
+async function api(a,p,tok){if(!API)throw new Error('Paste your Apps Script URL into API at the top of the script in index.html.');
+ const r=await fetch(API,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(Object.assign({action:a,token:tok===undefined?TOK:tok},p||{}))});
+ const j=await r.json();if(!j.ok)throw new Error(j.error||'Something went wrong');return j}
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove('on'),3200)}
+const view=h=>{$('#app').innerHTML=h;window.scrollTo(0,0)};
+const ytId=u=>{const m=String(u||'').match(/(?:v=|youtu\.be\/|embed\/|shorts\/)([\w-]{11})/);return m?m[1]:(/^[\w-]{11}$/.test(String(u||'').trim())?String(u).trim():'')};
+const tel=p=>String(p||'').replace(/[^\d+]/g,'');
+const wa=p=>{let d=String(p||'').replace(/\D/g,'');if(d.startsWith('0'))d='234'+d.slice(1);return d};
+/* ---------- chrome ---------- */
+function chrome(){const c=S.cfg||{};
+ const lg=$('#logo');if(c.logo&&/^https:\/\//.test(c.logo)){lg.innerHTML=`<img src="${esc(c.logo)}" alt="${esc(c.company||'Logo')}">`;lg.classList.add('has')}else{lg.textContent=c.company?c.company.toUpperCase():'YOUR LOGO';lg.classList.remove('has')}
+ $('#phones').innerHTML=[c.phone1,c.phone2].filter(Boolean).map(p=>`<a href="tel:${esc(tel(p))}">${esc(p)}</a>`).join('')||'<span style="color:var(--mu)">Phone numbers appear here</span>';
+ $('#fco').textContent=c.company||'Marketplace';document.title=(c.company||'Marketplace')+' | Real Estate, Services and Household Items';
+ const h=location.hash||'#/';
+ $('#nav').innerHTML=`<a href="#/" class="${h==='#/'?'on':''}">Home</a>`+S.tiers.map(t=>`<a href="#/t/${esc(t.id)}" class="${h==='#/t/'+t.id?'on':''}">${esc(t.name)}</a>`).join('')+
+  (TOK?`<a href="#/me" class="${h==='#/me'?'on':''}">My account${UNREAD?`<span class="badge">${UNREAD}</span>`:''}</a><a href="#/" data-act="logout">Log out</a>`:`<a href="#/login">Log in</a><a href="#/signup" class="cta">Sign up</a>`)}
+/* ---------- helpers: banner, cards ---------- */
+function banner(u){const y=ytId(u);
+ if(y)return`<div class="banner"><iframe src="https://www.youtube.com/embed/${y}?autoplay=1&mute=1&loop=1&playlist=${y}&controls=0&modestbranding=1&playsinline=1" allow="autoplay; encrypted-media" title="Advert"></iframe></div>`;
+ if(/^https:\/\/\S+\.(mp4|webm)(\?\S*)?$/i.test(u||''))return`<div class="banner"><video src="${esc(u)}" autoplay muted loop playsinline></video></div>`;
+ return`<div class="banner ph"><div><span>Advertise here</span><small>Video banner space</small></div></div>`}
+const card=l=>`<a class="card" href="#/l/${esc(l.id)}"><div class="im">${l.images[0]?`<img src="${esc(l.images[0])}" alt="${esc(l.title)}" loading="lazy">`:'No photo'}</div><div class="bd"><h3>${esc(l.title)}</h3>${l.price?`<div class="price">${esc(l.price)}</div>`:''}<div class="sub">${esc(l.vendor.name)}${l.vendor.business?' &middot; '+esc(l.vendor.business):''}</div><div class="sub">${esc(l.vendor.state)}, ${esc(l.vendor.lga)}</div></div></a>`;
+function track(ids){try{const day=new Date().toISOString().slice(0,10),seen=JSON.parse(localStorage.getItem('mk_imp')||'{}'),fresh=ids.filter(i=>seen[i]!==day);if(!fresh.length||!API)return;fresh.forEach(i=>seen[i]=day);localStorage.setItem('mk_imp',JSON.stringify(seen));api('imp',{ids:fresh},'').catch(()=>{})}catch(e){}}
+const pageName=id=>(S.pages.find(p=>p.id===id)||{}).name||'';
+/* ---------- public views ---------- */
+function vHome(){view(`<div class="hero"><h1>Find it. Book it. Buy it.</h1><p>Browse verified real estate agents, service providers and household items from vendors across Nigeria.</p></div><div class="grid">${S.tiers.map(t=>`<a class="tcard" href="#/t/${esc(t.id)}"><h3>${esc(t.name)}</h3><div class="sub">${S.pages.filter(p=>p.tierId===t.id).length} categories</div><div class="chips">${S.pages.filter(p=>p.tierId===t.id).slice(0,6).map(p=>`<span class="chip">${esc(p.name)}</span>`).join('')}</div></a>`).join('')||'<p>No categories yet.</p>'}</div>`)}
+function vTier(id){const t=S.tiers.find(x=>x.id===id);if(!t)return view('<p>That tier was not found.</p>');
+ view(`<div class="crumb"><a href="#/">Home</a></div>${banner(t.banner)}<h1>${esc(t.name)}</h1><div class="grid">${S.pages.filter(p=>p.tierId===id).map(p=>`<a class="tcard" href="#/p/${esc(p.id)}"><h3>${esc(p.name)}</h3><div class="sub">View listings</div></a>`).join('')||'<p>No listing pages yet.</p>'}</div>`)}
+async function vPage(id){const p=S.pages.find(x=>x.id===id);if(!p)return view('<p>That page was not found.</p>');const t=S.tiers.find(x=>x.id===p.tierId)||{};
+ view(`<div class="crumb"><a href="#/">Home</a> / <a href="#/t/${esc(t.id)}">${esc(t.name)}</a></div>${banner(p.banner)}<h1>${esc(p.name)}</h1><div class="bar"><div style="flex:1;min-width:150px"><input id="fq" placeholder="Search" aria-label="Search"></div><div style="flex:1;min-width:150px"><select id="fs" aria-label="State"><option value="">All states</option>${S.states.map(s=>`<option>${esc(s)}</option>`).join('')}</select></div></div><div class="grid" id="lst"><p>Loading...</p></div>`);
+ const load=async()=>{try{const r=await api('listings',{pageId:id,q:$('#fq').value,state:$('#fs').value},'');$('#lst').innerHTML=r.items.map(card).join('')||'<p>No listings yet. Check back soon.</p>';track(r.items.map(l=>l.id))}catch(e){$('#lst').innerHTML='<p>'+esc(e.message)+'</p>'}};
+ $('#fs').onchange=load;let tm;$('#fq').oninput=()=>{clearTimeout(tm);tm=setTimeout(load,350)};load()}
+async function vDetail(id){view('<p>Loading...</p>');
+ try{const l=(await api('listing',{id},'')).item,pg=S.pages.find(x=>x.id===l.pageId)||{},v=l.vendor;track([l.id]);
+  view(`<div class="crumb"><a href="#/">Home</a> / <a href="#/p/${esc(pg.id)}">${esc(pg.name||'Listings')}</a></div><div class="two"><div><div class="gal"><div class="main">${l.images[0]?`<img id="mainpic" src="${esc(l.images[0])}" alt="${esc(l.title)}">`:''}</div>${l.images.length>1?`<div class="thumbs">${l.images.map((u,i)=>`<img src="${esc(u)}" data-act="pic" data-src="${esc(u)}" class="${i?'':'on'}" alt="">`).join('')}</div>`:''}</div></div>
+  <div><h1>${esc(l.title)}</h1>${l.price?`<div class="price" style="font-size:1.5rem">${esc(l.price)}</div>`:''}<p style="margin:.7rem 0;white-space:pre-line">${esc(l.desc)}</p>${l.video?`<button class="vid" data-act="vid" data-id="${esc(l.video)}" aria-label="Play video"><img src="https://img.youtube.com/vi/${esc(l.video)}/hqdefault.jpg" alt="Video"><span>&#9654;</span></button>`:''}
+  <div class="box" style="margin-top:1rem"><h3>Seller</h3><p><b>${esc(v.name)}</b></p>${v.business?`<p>${esc(v.business)}</p>`:''}<p>${esc(v.address)}</p><p>${esc(v.lga)}, ${esc(v.state)}</p><div class="bar"><a class="btn s" href="tel:${esc(tel(v.phone))}">Call ${esc(v.phone)}</a><a class="btn s o" target="_blank" rel="noopener" href="https://wa.me/${esc(wa(v.phone))}">WhatsApp</a></div></div></div></div>`)}
+ catch(e){view('<p>'+esc(e.message)+'</p>')}}
+/* ---------- sign up / log in / verify ---------- */
+const lgaField=(st,val)=>LGA[st]?`<select id="su-lga"><option value="">Choose</option>${LGA[st].map(x=>`<option ${x===val?'selected':''}>${esc(x)}</option>`).join('')}</select>`:`<input id="su-lga" placeholder="Type your local government area" value="${esc(val||'')}">`;
+function vSignup(){view(`<h1>Create your account</h1><div class="box"><div class="two"><div><label>First name</label><input id="su-first" autocomplete="given-name"></div><div><label>Surname</label><input id="su-last" autocomplete="family-name"></div></div><label>Business name</label><input id="su-biz"><label>Address</label><input id="su-addr" autocomplete="street-address"><div class="two"><div><label>Gender</label><select id="su-gender"><option value="">Choose</option><option>Male</option><option>Female</option></select></div><div><label>Phone number</label><input id="su-phone" type="tel" autocomplete="tel"></div></div><label>Email address</label><input id="su-email" type="email" autocomplete="email"><div class="two"><div><label>State</label><select id="su-state"><option value="">Choose</option>${S.states.map(s=>`<option>${esc(s)}</option>`).join('')}</select></div><div><label>Local government</label><span id="lgaw">${lgaField('')}</span></div></div><label>Password (8+ characters)</label><input id="su-pw" type="password" autocomplete="new-password"><div class="note">Your name, address, phone number, state and local government are shown to people who view your listings. Your business name, gender and email are not shown unless the admin activates the business name.</div><button class="btn" data-act="signup">Create account</button></div>`);
+ $('#su-state').onchange=e=>{$('#lgaw').innerHTML=lgaField(e.target.value)}}
+function vLogin(note){view(`<h1>Log in</h1>${note?`<div class="note">${esc(note)}</div>`:''}<div class="box"><label>Email address</label><input id="li-email" type="email" autocomplete="email"><label>Password</label><input id="li-pw" type="password" autocomplete="current-password"><div class="bar"><button class="btn" data-act="login">Log in</button><button class="btn o" data-act="resend">Resend verification email</button></div><p class="sub">New here? <a href="#/signup">Create an account</a></p></div>`)}
+async function vVerify(tok){view('<p>Verifying your email...</p>');try{await api('verify',{token:tok},'');view('<h1>Email verified</h1><div class="note">Your account is now active. You can log in.</div><a class="btn" href="#/login">Log in</a>')}catch(e){view('<h1>Verification failed</h1><div class="note">'+esc(e.message)+'</div>')}}
+/* ---------- vendor account ---------- */
+const ACC={tab:'list',edit:null,imgs:[]};
+async function vMe(){if(!TOK)return vLogin('Please log in.');view('<p>Loading...</p>');
+ try{ME=(await api('me')).me;const n=await api('notifs');UNREAD=n.unread;chrome();
+  const mine=(await api('myListings')).items;ACC.mine=mine;ACC.notifs=n.items;
+  const tabs=`<div class="tabs">${[['list','My listings'],['add',ACC.edit?'Edit listing':'Add listing'],['inbox','Notifications'+(UNREAD?' ('+UNREAD+')':'')]].map(t=>`<button class="${ACC.tab===t[0]?'on':''}" data-act="tab" data-t="${t[0]}">${t[1]}</button>`).join('')}</div>`;
+  let body='';
+  if(ACC.tab==='list')body=`<div class="note">${mine.length} of ${ME.maxListings} listings used. Up to ${ME.maxImages} pictures per listing.</div>`+(mine.map(l=>`<div class="row"><b>${esc(l.title)}</b> <span class="flag">${esc(pageName(l.pageId))}</span><div class="sub">${esc(l.price)} &middot; ${l.images.length} picture(s)${l.video?' &middot; video added':''}</div><div class="bar"><button class="btn s o" data-act="edit" data-id="${esc(l.id)}">Edit</button><button class="btn s o" data-act="del" data-id="${esc(l.id)}">Delete</button><a class="btn s o" href="#/l/${esc(l.id)}">View</a></div></div>`).join('')||'<p>You have no listings yet.</p>');
+  if(ACC.tab==='add'){const e=ACC.edit?mine.find(x=>x.id===ACC.edit):null;ACC.imgs=ACC.imgs.length||!e?ACC.imgs:e.images.slice();
+   body=`<div class="box"><label>Where do you want to list it?</label><select id="ls-page"><option value="">Choose</option>${S.tiers.map(t=>`<optgroup label="${esc(t.name)}">${S.pages.filter(p=>p.tierId===t.id).map(p=>`<option value="${esc(p.id)}" ${e&&e.pageId===p.id?'selected':''}>${esc(p.name)}</option>`).join('')}</optgroup>`).join('')}</select><label>Title</label><input id="ls-title" value="${esc(e?e.title:'')}"><label>Price (for example N150,000)</label><input id="ls-price" value="${esc(e?e.price:'')}"><label>Description</label><textarea id="ls-desc">${esc(e?e.desc:'')}</textarea><label>Pictures (up to ${ME.maxImages})</label><div class="thumbs" id="ls-thumbs"></div><input id="ls-files" type="file" accept="image/*" multiple><label>YouTube video link (optional)</label><input id="ls-video" placeholder="https://www.youtube.com/watch?v=..." value="${esc(e?e.video:'')}"><div class="note">Your video is shown on the listing once the admin has activated it for you, your tier or your category.</div><div class="bar"><button class="btn" data-act="savel" data-id="${esc(e?e.id:'')}">Save listing</button><button class="btn o" data-act="tab" data-t="list">Cancel</button></div></div>`}
+  if(ACC.tab==='inbox'){body=ACC.notifs.map(x=>`<div class="box ${x.read?'':'unread'}"><b>${esc(x.title)}</b><div class="sub">${esc(new Date(x.created).toLocaleString('en-NG'))}</div><p style="white-space:pre-line">${esc(x.body)}</p></div>`).join('')||'<p>No notifications yet.</p>';const ids=ACC.notifs.filter(x=>!x.read).map(x=>x.id);if(ids.length)api('markRead',{ids}).then(()=>{UNREAD=0;chrome()}).catch(()=>{})}
+  view(`<h1>My account</h1><p class="sub">${esc(ME.first)} ${esc(ME.last)} &middot; ${esc(ME.business)} &middot; ${esc(ME.email)}</p>${tabs}${body}`);if(ACC.tab==='add')thumbs()}
+ catch(e){if(/sign in again|not active/i.test(e.message)){TOK='';localStorage.removeItem('mk_t');chrome();vLogin(e.message)}else view('<p>'+esc(e.message)+'</p>')}}
+function thumbs(){const t=$('#ls-thumbs');if(!t)return;t.innerHTML=ACC.imgs.map((u,i)=>`<span style="position:relative"><img src="${esc(typeof u==='string'?u:URL.createObjectURL(u))}" alt=""><button class="btn s" style="position:absolute;top:2px;right:2px;padding:0 .45rem" data-act="rmimg" data-i="${i}" aria-label="Remove">&times;</button></span>`).join('')||'<span class="sub">No pictures yet</span>'}
+function shrink(f,max){return new Promise((res,rej)=>{const r=new FileReader();r.onerror=rej;r.onload=()=>{const i=new Image();i.onerror=rej;i.onload=()=>{const k=Math.min(1,max/Math.max(i.width,i.height)),c=document.createElement('canvas');c.width=Math.round(i.width*k);c.height=Math.round(i.height*k);c.getContext('2d').drawImage(i,0,0,c.width,c.height);res(c.toDataURL('image/jpeg',.82))};i.src=r.result};r.readAsDataURL(f)})}
+/* ---------- admin ---------- */
+const AD={tab:'over'};
+async function vAdmin(){if(!ATOK){view(`<h1>Admin</h1><div class="box"><label>Password</label><input id="ad-pw" type="password"><div class="bar"><button class="btn" data-act="adlogin">Unlock</button></div></div>`);return}
+ view('<p>Loading...</p>');
+ try{if(!ADM||AD.reload){ADM=await api('adminData',{},ATOK);AD.reload=false}
+  const T=[['over','Overview'],['acc','Accounts'],['tier','Tiers & pages'],['note','Notifications'],['imp','Impressions'],['lst','Listings'],['set','Settings']];
+  let b='';
+  if(AD.tab==='over')b=`<div class="grid">${[['Accounts',ADM.users.length],['Verified',ADM.users.filter(u=>u.verified).length],['Listings',ADM.users.reduce((s,u)=>s+u.listings,0)],['Tiers',ADM.tiers.length],['Listing pages',ADM.pages.length]].map(x=>`<div class="tcard"><div class="sub">${x[0]}</div><h3 style="font-size:2rem">${x[1]}</h3></div>`).join('')}</div>`;
+  if(AD.tab==='acc')b=ADM.users.map(u=>`<div class="box" data-u="${esc(u.id)}"><b>${esc(u.name)}</b> <span class="flag">${u.verified?'Verified':'Not verified'}</span><span class="flag">${esc(u.status)}</span><div class="sub">${esc(u.business)} &middot; ${esc(u.email)} &middot; ${esc(u.phone)} &middot; ${esc(u.state)}, ${esc(u.lga)} &middot; ${u.listings} listing(s)</div><div class="two"><div><label>Max listings (0 = default)</label><input class="f-ml" type="number" min="0" value="${u.max_listings}"></div><div><label>Max pictures per listing (0 = default)</label><input class="f-mi" type="number" min="0" value="${u.max_images}"></div></div><div class="chk"><input class="f-biz" type="checkbox" id="b${esc(u.id)}" ${u.biz_on?'checked':''}><label for="b${esc(u.id)}">Show business name</label></div><div class="chk"><input class="f-vid" type="checkbox" id="v${esc(u.id)}" ${u.video_on?'checked':''}><label for="v${esc(u.id)}">Show video on listings</label></div><div class="chk"><input class="f-ver" type="checkbox" id="e${esc(u.id)}" ${u.verified?'checked disabled':''}><label for="e${esc(u.id)}">Email verified (tick to verify manually)</label></div><label>Status</label><select class="f-st"><option ${u.status==='Active'?'selected':''}>Active</option><option ${u.status==='Suspended'?'selected':''}>Suspended</option></select><div class="bar"><button class="btn s" data-act="saveu">Save</button></div></div>`).join('')||'<p>No accounts yet.</p>';
+  if(AD.tab==='tier'){const rowF=(it,kind)=>`<div class="box" data-k="${kind}" data-id="${esc(it.id||'')}" data-tier="${esc(it.tierId||'')}"><div class="two"><div><label>Name</label><input class="f-n" value="${esc(it.name||'')}"></div><div><label>Order</label><input class="f-o" type="number" value="${it.order||''}"></div></div><div class="chk"><input class="f-vis" type="checkbox" ${it.visible!==false?'checked':''} id="vi${kind}${esc(it.id||'n')}"><label for="vi${kind}${esc(it.id||'n')}">Visible</label></div><div class="chk"><input class="f-biz" type="checkbox" ${it.biz_on?'checked':''} id="bz${kind}${esc(it.id||'n')}"><label for="bz${kind}${esc(it.id||'n')}">Show business name for all listings here</label></div><div class="chk"><input class="f-vid" type="checkbox" ${it.video_on?'checked':''} id="vd${kind}${esc(it.id||'n')}"><label for="vd${kind}${esc(it.id||'n')}">Show videos for all listings here</label></div><label>Banner video (YouTube link or .mp4 link)</label><input class="f-ban" value="${esc(it.banner||'')}"><div class="bar"><button class="btn s" data-act="savet">${it.id?'Save':'Add'}</button>${it.id?'<button class="btn s o" data-act="delt">Delete</button>':''}</div></div>`;
+   b=`<h2>Add a tier</h2>${rowF({},'tier')}`+ADM.tiers.map(t=>`<h2>${esc(t.name)}</h2>${rowF(t,'tier')}<div class="note">Listing pages in this tier</div>${ADM.pages.filter(p=>p.tierId===t.id).map(p=>rowF(p,'page')).join('')}<h3>Add a listing page to ${esc(t.name)}</h3>${rowF({tierId:t.id},'page')}`).join('')}
+  if(AD.tab==='note')b=`<div class="box"><label>Send to</label><select id="nt-scope"><option value="all">All accounts</option><option value="user">One account</option><option value="tier">A tier</option><option value="page">A listing page</option></select><div id="nt-tw"></div><label>Title</label><input id="nt-title"><label>Message</label><textarea id="nt-body"></textarea><div class="bar"><button class="btn" data-act="sendn">Send notification</button></div></div><div id="nt-hist"></div>`;
+  if(AD.tab==='imp')b='<p>Loading...</p>';
+  if(AD.tab==='lst')b='<p>Loading...</p>';
+  if(AD.tab==='set'){const c=ADM.cfg;b=`<div class="box"><label>Company name</label><input id="st-company" value="${esc(c.company||'')}"><label>Logo link (https) or upload</label><input id="st-logo" value="${esc(c.logo||'')}"><input id="st-logofile" type="file" accept="image/*"><div class="two"><div><label>Phone number 1</label><input id="st-p1" value="${esc(c.phone1||'')}"></div><div><label>Phone number 2</label><input id="st-p2" value="${esc(c.phone2||'')}"></div></div><div class="two"><div><label>Default listings per account</label><input id="st-dl" type="number" min="1" value="${esc(c.default_listings||5)}"></div><div><label>Default pictures per listing</label><input id="st-di" type="number" min="1" value="${esc(c.default_images||5)}"></div></div><div class="bar"><button class="btn" data-act="savec">Save settings</button></div></div>`}
+  view(`<h1>Admin</h1><div class="tabs">${T.map(t=>`<button class="${AD.tab===t[0]?'on':''}" data-act="adtab" data-t="${t[0]}">${t[1]}</button>`).join('')}<button data-act="adout">Lock</button></div>${b}`);
+  if(AD.tab==='note')ntTarget();if(AD.tab==='imp')adImp();if(AD.tab==='lst')adLst();if(AD.tab==='note')adHist()}
+ catch(e){if(/sign in again|allowed/i.test(e.message)){ATOK='';sessionStorage.removeItem('mk_a');vAdmin()}else view('<p>'+esc(e.message)+'</p>')}}
+function ntTarget(){const s=$('#nt-scope'),w=$('#nt-tw'),f=()=>{const v=s.value;w.innerHTML=v==='user'?'<label>Account email or ID</label><input id="nt-t">':v==='tier'?`<label>Tier</label><select id="nt-t">${ADM.tiers.map(t=>`<option value="${esc(t.id)}">${esc(t.name)}</option>`).join('')}</select>`:v==='page'?`<label>Listing page</label><select id="nt-t">${ADM.pages.map(p=>`<option value="${esc(p.id)}">${esc((ADM.tiers.find(t=>t.id===p.tierId)||{}).name)} / ${esc(p.name)}</option>`).join('')}</select>`:''};s.onchange=f;f()}
+async function adHist(){try{const r=await api('adminNotifs',{},ATOK);$('#nt-hist').innerHTML='<h2>Sent</h2>'+(r.items.map(n=>`<div class="row"><b>${esc(n.title)}</b> <span class="flag">${esc(n.scope)}</span><div class="sub">${esc(new Date(n.created).toLocaleString('en-NG'))}</div></div>`).join('')||'<p>Nothing sent yet.</p>')}catch(e){}}
+async function adImp(){try{const r=await api('impMatrix',{},ATOK);$('#app').lastElementChild.outerHTML=`<div class="tbl"><table><tr><th>Account</th>${r.days.map(d=>`<th>${esc(d.slice(5))}</th>`).join('')}<th>30 days</th><th>Total</th></tr>${r.rows.map(x=>`<tr><td>${esc(x.name)}<br><span class="sub">${esc(x.business)}</span></td>${x.days.map(n=>`<td>${n}</td>`).join('')}<td>${x.d30}</td><td><b>${x.total}</b></td></tr>`).join('')}</table></div><p class="sub">An impression is counted once per visitor per day each time a listing is shown in a list or opened.</p>`}catch(e){toast(e.message)}}
+async function adLst(){try{const r=await api('adminListings',{},ATOK);$('#app').lastElementChild.outerHTML='<div>'+(r.items.map(l=>`<div class="row"><b>${esc(l.title)}</b> <span class="flag">${esc(pageName(l.pageId)||l.pageId)}</span><span class="sub">${esc(l.owner)}</span><div class="bar"><button class="btn s o" data-act="lvis" data-id="${esc(l.id)}" data-v="${l.visible?0:1}">${l.visible?'Hide':'Show'}</button><a class="btn s o" href="#/l/${esc(l.id)}">View</a></div></div>`).join('')||'<p>No listings yet.</p>')+'</div>'}catch(e){toast(e.message)}}
+/* ---------- actions ---------- */
+const val=id=>($('#'+id)||{}).value||'';
+document.addEventListener('click',async e=>{const b=e.target.closest('[data-act]');if(!b)return;const a=b.dataset.act;
+ try{
+ if(a==='logout'){TOK='';localStorage.removeItem('mk_t');ME=null;UNREAD=0;chrome();return}
+ if(a==='pic'){$('#mainpic').src=b.dataset.src;document.querySelectorAll('.thumbs img').forEach(i=>i.classList.toggle('on',i===b));return}
+ if(a==='vid'){$('#ov').innerHTML=`<div class="in"><button class="x" data-act="vx" aria-label="Close">&times;</button><iframe src="https://www.youtube.com/embed/${esc(b.dataset.id)}?autoplay=1&rel=0" allow="autoplay; encrypted-media; fullscreen" allowfullscreen title="Video"></iframe></div>`;$('#ov').hidden=false;return}
+ if(a==='vx'){$('#ov').hidden=true;$('#ov').innerHTML='';return}
+ if(a==='signup'){b.disabled=true;try{await api('signup',{site:location.href.split('#')[0],first:val('su-first'),last:val('su-last'),business:val('su-biz'),address:val('su-addr'),gender:val('su-gender'),email:val('su-email'),phone:val('su-phone'),state:val('su-state'),lga:val('su-lga'),password:val('su-pw')},'');view('<h1>Check your email</h1><div class="note">We sent a verification link to your email address. Open it to activate your account, then log in.</div><a class="btn" href="#/login">Go to log in</a>')}catch(er){toast(er.message);b.disabled=false}return}
+ if(a==='login'){b.disabled=true;try{const r=await api('login',{email:val('li-email'),password:val('li-pw')},'');TOK=r.token;localStorage.setItem('mk_t',TOK);ME=r.me;ACC.tab='list';location.hash='#/me'}catch(er){toast(er.message);b.disabled=false}return}
+ if(a==='resend'){await api('resend',{email:val('li-email'),site:location.href.split('#')[0]},'');toast('If that account needs verification, a new email has been sent.');return}
+ if(a==='tab'){ACC.tab=b.dataset.t;if(b.dataset.t!=='add'){ACC.edit=null;ACC.imgs=[]}vMe();return}
+ if(a==='edit'){ACC.edit=b.dataset.id;ACC.imgs=[];ACC.tab='add';vMe();return}
+ if(a==='del'){if(!confirm('Delete this listing?'))return;await api('deleteListing',{id:b.dataset.id});toast('Deleted');vMe();return}
+ if(a==='rmimg'){ACC.imgs.splice(Number(b.dataset.i),1);thumbs();return}
+ if(a==='savel'){b.disabled=true;try{const max=ME.maxImages;const files=[...($('#ls-files').files||[])];if(ACC.imgs.length+files.length>max)throw new Error('You can add up to '+max+' pictures.');
+   files.forEach(f=>ACC.imgs.push(f));const urls=[];for(let i=0;i<ACC.imgs.length;i++){const x=ACC.imgs[i];if(typeof x==='string'){urls.push(x);continue}b.textContent='Uploading '+(i+1)+'/'+ACC.imgs.length+'...';urls.push((await api('upload',{imageData:await shrink(x,1200)})).url)}
+   await api('saveListing',{item:{id:b.dataset.id,pageId:val('ls-page'),title:val('ls-title'),price:val('ls-price'),desc:val('ls-desc'),video:val('ls-video'),images:urls}});toast('Listing saved');ACC.edit=null;ACC.imgs=[];ACC.tab='list';vMe()}catch(er){toast(er.message);b.disabled=false;b.textContent='Save listing';ACC.imgs=ACC.imgs.filter(x=>typeof x==='string')}return}
+ if(a==='adlogin'){const r=await api('adminLogin',{password:val('ad-pw')},'');ATOK=r.token;sessionStorage.setItem('mk_a',ATOK);ADM=null;vAdmin();return}
+ if(a==='adout'){ATOK='';sessionStorage.removeItem('mk_a');ADM=null;vAdmin();return}
+ if(a==='adtab'){AD.tab=b.dataset.t;vAdmin();return}
+ if(a==='saveu'){const c=b.closest('[data-u]'),q=s=>c.querySelector(s);await api('saveUser',{item:{id:c.dataset.u,max_listings:q('.f-ml').value,max_images:q('.f-mi').value,biz_on:q('.f-biz').checked,video_on:q('.f-vid').checked,verified:q('.f-ver').checked,status:q('.f-st').value}},ATOK);toast('Saved');AD.reload=true;vAdmin();return}
+ if(a==='savet'||a==='delt'){const c=b.closest('[data-k]'),q=s=>c.querySelector(s),k=c.dataset.k;
+   if(a==='delt'){if(!confirm('Delete this?'))return;await api(k==='tier'?'deleteTier':'deletePage',{id:c.dataset.id},ATOK)}
+   else{const it={id:c.dataset.id,name:q('.f-n').value,order:q('.f-o').value,visible:q('.f-vis').checked,biz_on:q('.f-biz').checked,video_on:q('.f-vid').checked,banner:q('.f-ban').value};if(k==='page')it.tierId=c.dataset.tier;await api(k==='tier'?'saveTier':'savePage',{item:it},ATOK)}
+   toast('Done');AD.reload=true;await boot(true);vAdmin();return}
+ if(a==='sendn'){await api('sendNotif',{scope:val('nt-scope'),target:val('nt-t'),title:val('nt-title'),body:val('nt-body')},ATOK);toast('Notification sent');$('#nt-title').value='';$('#nt-body').value='';adHist();return}
+ if(a==='lvis'){await api('adminListingVisible',{id:b.dataset.id,visible:b.dataset.v==='1'},ATOK);toast('Updated');adLst();return}
+ if(a==='savec'){let logo=val('st-logo');const f=($('#st-logofile').files||[])[0];if(f)logo=(await api('adminUpload',{imageData:await shrink(f,700)},ATOK)).url;
+   await api('saveConfig',{cfg:{company:val('st-company'),logo:logo,phone1:val('st-p1'),phone2:val('st-p2'),default_listings:val('st-dl'),default_images:val('st-di')}},ATOK);toast('Settings saved');AD.reload=true;await boot(true);vAdmin();return}
+ }catch(er){toast(er.message);if(b)b.disabled=false}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!$('#ov').hidden){$('#ov').hidden=true;$('#ov').innerHTML=''}});
+$('#ov').addEventListener('click',e=>{if(e.target.id==='ov'){$('#ov').hidden=true;$('#ov').innerHTML=''}});
+/* ---------- router ---------- */
+function route(){chrome();const h=(location.hash||'#/').replace(/^#/,''),p=h.split('/').filter(Boolean);
+ if(!p.length)return vHome();
+ if(p[0]==='t')return vTier(p[1]);if(p[0]==='p')return vPage(p[1]);if(p[0]==='l')return vDetail(p[1]);
+ if(p[0]==='signup')return vSignup();if(p[0]==='login')return vLogin();if(p[0]==='verify')return vVerify(p[1]);
+ if(p[0]==='me')return vMe();if(p[0]==='admin')return vAdmin();vHome()}
+async function boot(quiet){try{const r=await api('init',{},'');S.cfg=r.cfg;S.tiers=r.tiers;S.pages=r.pages;S.states=r.states}catch(e){if(!quiet)view('<div class="note">'+esc(e.message)+'</div>');return}
+ if(!quiet)route();else chrome()}
+addEventListener('hashchange',route);
+boot();
+})();
+</script>
+</body>
+</html>
